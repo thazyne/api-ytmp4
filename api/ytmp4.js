@@ -1,5 +1,3 @@
-// api/ytmp4.js
-
 export default async function handler(req, res) {
   const { url } = req.query;
 
@@ -15,6 +13,6 @@ export default async function handler(req, res) {
 
     return res.status(200).json(data);
   } catch (err) {
-    return res.status(500).json({ error: 'Gagal mengambil data dari API' });
+    return res.status(500).json({ error: 'Gagal mengambil data dari API', detail: err.message });
   }
 }
